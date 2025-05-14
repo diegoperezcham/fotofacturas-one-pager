@@ -1,0 +1,258 @@
+/* Estilos generales */
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Variables de color */
+:root {
+    --primary-color: #5501F1;
+    --primary-light: rgba(85, 1, 241, 0.7);
+    --primary-lighter: rgba(85, 1, 241, 0.3);
+    --tam-color: #3A317E;
+    --sam-color: #504DB0;
+    --som-color: #6965CA;
+}
+
+/* Tema de color púrpura para elementos con clase */
+.purple-theme {
+    color: var(--primary-color);
+}
+
+.purple-bg {
+    background-color: var(--primary-color);
+}
+
+/* Clases para ocultar/mostrar elementos */
+.hidden {
+    display: none;
+}
+
+/* Encabezados de sección */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2d5ff;
+    transition: all 0.3s ease;
+}
+
+.section-header:hover {
+    background-color: #f9f7fe;
+}
+
+.section-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+/* Círculos para gráfico de mercado */
+.circle {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.circle-lg {
+    width: 12rem;
+    height: 12rem;
+}
+
+.circle-md {
+    width: 9rem;
+    height: 9rem;
+}
+
+.circle-sm {
+    width: 6rem;
+    height: 6rem;
+}
+
+.tam-bg {
+    background-color: var(--tam-color);
+}
+
+.sam-bg {
+    background-color: var(--sam-color);
+}
+
+.som-bg {
+    background-color: var(--som-color);
+}
+
+/* Conectores del diagrama de flujo */
+#connector-1, #connector-2 {
+    transition: all 0.3s ease;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .circle-lg {
+        width: 9rem;
+        height: 9rem;
+    }
+    
+    .circle-md {
+        width: 7rem;
+        height: 7rem;
+    }
+    
+    .circle-sm {
+        width: 5rem;
+        height: 5rem;
+    }
+    
+    .section-content {
+        padding-left: 0.5rem;
+    }
+    
+    /* Cambiar dirección de flexbox para móviles */
+    .flex-row-to-col-mobile {
+        flex-direction: column;
+    }
+    
+    /* Ajustar gráficos para móviles */
+    .chart-container {
+        height: 30vh;
+    }
+}
+
+/* Estilos para la pantalla de login */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+    padding: 1rem;
+}
+
+.login-box {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 24rem;
+}
+
+.logo-container {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    margin-top: 0.25rem;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(85, 1, 241, 0.2);
+}
+
+.submit-button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: rgba(85, 1, 241, 0.9);
+}
+
+.error-message {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Estilos adicionales para elementos específicos */
+.bordered-box {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.quote-box {
+    background-color: #f9fafb;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-style: italic;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.stat-box {
+    background-color: #f9fafb;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    margin-bottom: 1rem;
+}
+
+.plan-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.plan-card.featured {
+    border: 2px solid var(--primary-color);
+}
+
+/* Animación para elementos interactivos */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.interactive-element:hover {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Mejoras para la accesibilidad */
+.section-header:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.submit-button:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
