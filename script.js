@@ -119,8 +119,11 @@ function renderOnePager(container) {
             <!-- Encabezado -->
             <div class="purple-bg text-white p-4 md:p-6 flex justify-between items-center">
                 <div class="flex-1">
-                    <h1 class="text-2xl md:text-4xl font-bold mb-1 md:mb-2">One Pager - Fotofacturas</h1>
+                    <h1 class="text-2xl md:text-4xl font-bold mb-1 md:mb-2">One Pager</h1>
                     <h2 class="text-base md:text-xl">Sistema de facturación automática de gastos.</h2>
+                </div>
+                <div class="ml-4">
+                    <img src="https://fotofacturas.ai/blog/wp-content/uploads/2024/10/logoff.png" alt="Fotofacturas Logo" class="h-8 md:h-10">
                 </div>
             </div>
 
