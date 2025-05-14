@@ -244,7 +244,7 @@ function renderOnePager(container) {
                                         <p class="text-3xl font-bold mb-3 purple-theme">$99</p>
                                     </div>
                                     
-                                    <div class="bg-white p-4 rounded-lg shadow-md border-2 text-center" style="border-color: #5501F1;">
+                                    <div class="bg-white p-4 rounded-lg shadow-md border border-gray-200 text-center">
                                         <h4 class="text-xl font-bold mb-2">Plan Individual</h4>
                                         <p class="text-3xl font-bold mb-3 purple-theme">$299</p>
                                     </div>
