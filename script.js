@@ -21,13 +21,13 @@ const sections = {
 // Función principal que inicia la aplicación
 function init() {
     const appContainer = document.getElementById('app');
-    
+
     if (isAuthenticated) {
         renderOnePager(appContainer);
     } else {
         renderPasswordScreen(appContainer);
     }
-    
+
     // Detectar si es móvil
     checkMobile();
     window.addEventListener('resize', checkMobile);
@@ -37,7 +37,7 @@ function init() {
 let isMobile = false;
 function checkMobile() {
     isMobile = window.innerWidth < 768;
-    
+
     // Ajustar estilos según el dispositivo
     if (isAuthenticated) {
         updateResponsiveStyles();
@@ -85,21 +85,21 @@ function renderPasswordScreen(container) {
             </div>
         </div>
     `;
-    
+
     // Inicializar iconos de Lucide
     lucide.createIcons();
-    
+
     // Configurar evento de envío del formulario
     const form = document.getElementById('password-form');
     const passwordInput = document.getElementById('password');
     const errorMessage = document.getElementById('error-message');
-    
+
     // Dar foco al input de contraseña
     passwordInput.focus();
-    
-    form.addEventListener('submit', function(e) {
+
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         if (passwordInput.value === correctPassword) {
             isAuthenticated = true;
             localStorage.setItem('fotofacturas_auth', 'true');
@@ -241,17 +241,17 @@ function renderOnePager(container) {
                                 <div class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4">
                                     <div class="bg-white p-4 rounded-lg shadow-md border border-gray-200 text-center">
                                         <h4 class="text-xl font-bold mb-2">Plan Ahorro</h4>
-                                        <p class="text-3xl font-bold mb-3 purple-theme">$99</p>
+                                        <p class="text-3xl font-bold mb-3 purple-theme">$5 USD</p>
                                     </div>
                                     
                                     <div class="bg-white p-4 rounded-lg shadow-md border border-gray-200 text-center">
                                         <h4 class="text-xl font-bold mb-2">Plan Individual</h4>
-                                        <p class="text-3xl font-bold mb-3 purple-theme">$299</p>
+                                        <p class="text-3xl font-bold mb-3 purple-theme">$15 USD</p>
                                     </div>
                                     
                                     <div class="bg-white p-4 rounded-lg shadow-md border border-gray-200 text-center">
                                         <h4 class="text-xl font-bold mb-2">Plan Empresarial</h4>
-                                        <p class="text-3xl font-bold mb-3 purple-theme">$999</p>
+                                        <p class="text-3xl font-bold mb-3 purple-theme">$50 USD</p>
                                     </div>
                                 </div>
                             </div>
@@ -270,31 +270,51 @@ function renderOnePager(container) {
                         <div class="section-content" id="funcionamiento-content">
                             <div class="mt-3 ml-4 md:ml-8">
                                 <div class="flex flex-col items-center">
-                                    <p class="text-center font-semibold mb-4 text-xl">Gráfico diagrama de flujo, explicando los 3 pasos:</p>
+                                    <p class="text-center font-semibold mb-6 text-xl">Proceso simple en 3 pasos:</p>
                                     
                                     <div class="w-full mb-6 flex justify-center">
-                                        <div class="border border-gray-200 rounded-lg p-4 md:p-8 bg-white">
+                                        <div class="w-full border border-gray-200 rounded-lg p-4 md:p-8 bg-white shadow-md">
                                             <div id="flow-diagram" class="flex flex-col md:flex-row justify-center items-center gap-6">
+                                                <!-- Paso 1 -->
                                                 <div class="flex flex-col items-center">
-                                                    <div class="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold purple-bg">1</div>
-                                                    <p class="mt-2 font-medium">Crear cuenta</p>
+                                                    <div class="relative">
+                                                        <img src="https://fotofacturas.ai/blog/wp-content/uploads/2025/05/Device2.png" alt="Crear cuenta" class="w-40 md:w-48 h-auto rounded-lg shadow-sm">
+                                                        <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold purple-bg">1</div>
+                                                    </div>
+                                                    <p class="mt-4 font-medium text-center">Crear cuenta</p>
                                                 </div>
                                                 
-                                                <div id="connector-1" class="h-0.5 w-8 md:w-16 purple-bg"></div>
+                                                <!-- Conector 1 -->
+                                                <div id="connector-1" class="h-0.5 w-8 md:w-16 purple-bg hidden md:block"></div>
+                                                <div id="connector-1-mobile" class="w-0.5 h-8 purple-bg block md:hidden"></div>
                                                 
+                                                <!-- Paso 2 -->
                                                 <div class="flex flex-col items-center">
-                                                    <div class="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold purple-bg">2</div>
-                                                    <p class="mt-2 font-medium">Tomar foto</p>
+                                                    <div class="relative">
+                                                        <img src="https://fotofacturas.ai/blog/wp-content/uploads/2025/05/Device3.png" alt="Tomar una foto" class="w-40 md:w-48 h-auto rounded-lg shadow-sm">
+                                                        <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold purple-bg">2</div>
+                                                    </div>
+                                                    <p class="mt-4 font-medium text-center">Tomar una foto</p>
                                                 </div>
                                                 
-                                                <div id="connector-2" class="h-0.5 w-8 md:w-16 purple-bg"></div>
+                                                <!-- Conector 2 -->
+                                                <div id="connector-2" class="h-0.5 w-8 md:w-16 purple-bg hidden md:block"></div>
+                                                <div id="connector-2-mobile" class="w-0.5 h-8 purple-bg block md:hidden"></div>
                                                 
+                                                <!-- Paso 3 -->
                                                 <div class="flex flex-col items-center">
-                                                    <div class="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold purple-bg">3</div>
-                                                    <p class="mt-2 font-medium">Recibir factura</p>
+                                                    <div class="relative">
+                                                        <img src="https://fotofacturas.ai/blog/wp-content/uploads/2025/05/Device.png" alt="Recibir factura" class="w-40 md:w-48 h-auto rounded-lg shadow-sm">
+                                                        <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold purple-bg">3</div>
+                                                    </div>
+                                                    <p class="mt-4 font-medium text-center">Recibir factura</p>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    
+                                    <div class="bg-gray-50 p-4 rounded-lg border-l-4 mt-4 text-center" style="border-color: #5501F1;">
+                                        <p class="italic">Proceso completamente automatizado que te permite facturar tus gastos en segundos.</p>
                                     </div>
                                 </div>
                             </div>
@@ -359,9 +379,8 @@ function renderOnePager(container) {
                                     <div class="flex items-center justify-between">
                                         <div>
                                             <h4 class="font-semibold mb-1 purple-theme">Total de tickets facturados</h4>
-                                            <p class="text-sm text-gray-600">Impacto directo en deducción de ISR</p>
                                         </div>
-                                        <div class="text-3xl font-bold purple-theme">+$43 MDP</div>
+                                        <div class="text-3xl font-bold purple-theme">+$2.2M USD</div>
                                     </div>
                                 </div>
                                 
@@ -371,7 +390,7 @@ function renderOnePager(container) {
                                             <h4 class="font-semibold mb-1 purple-theme">Deducción de IVA</h4>
                                             <p class="text-sm text-gray-600">Valor aproximado</p>
                                         </div>
-                                        <div class="text-3xl font-bold purple-theme">+$6.8 MDP</div>
+                                        <div class="text-3xl font-bold purple-theme">+$352K USD</div>
                                     </div>
                                 </div>
                             </div>
@@ -390,66 +409,132 @@ function renderOnePager(container) {
                         <div class="section-content" id="crecimiento-content">
                             <div class="mt-3 ml-4 md:ml-8">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Ingresos por año -->
                                     <div class="bg-gray-50 p-4 rounded-lg">
-                                        <h4 class="font-semibold mb-3 purple-theme">Ventas (MXN)</h4>
+                                        <h4 class="font-semibold mb-8 purple-theme">Ventas (USD)</h4>
                                         <div class="h-40 relative">
                                             <div class="absolute bottom-0 left-0 w-full h-full flex items-end justify-around px-2">
+                                                <!-- 2023 -->
                                                 <div class="flex flex-col items-center">
                                                     <div class="w-16 rounded-t h-16 purple-bg">
-                                                        <div class="absolute -top-6 w-16 text-center text-xs font-bold">$106,812 MXN</div>
+                                                        <div class="absolute -top-6 w-16 text-center text-xs font-bold">$5,934 USD</div>
                                                     </div>
                                                     <span class="text-xs mt-1">2023</span>
                                                 </div>
+                                                
+                                                <!-- 2024 -->
                                                 <div class="flex flex-col items-center">
                                                     <div class="w-16 rounded-t h-28 purple-bg">
-                                                        <div class="absolute -top-6 w-16 text-center text-xs font-bold">$387,540 MXN</div>
+                                                        <div class="absolute -top-6 w-16 text-center text-xs font-bold">$21,530 USD</div>
                                                     </div>
                                                     <span class="text-xs mt-1">2024</span>
                                                 </div>
+                                                
+                                                <!-- 2025 - Dividido en actual y proyección -->
                                                 <div class="flex flex-col items-center">
-                                                    <div class="w-16 rounded-t h-20" style="background-color: rgba(85, 1, 241, 0.7);">
-                                                        <div class="absolute -top-6 w-16 text-center text-xs font-bold">$223,498 MXN</div>
+                                                    <div class="relative w-16">
+                                                        <!-- Parte actual (YTD) -->
+                                                        <div class="w-16 rounded-t-lg h-16 purple-bg">
+                                                            <div class="absolute -top-9 w-16 text-center text-xs font-bold">$44,800 USD</div>
+                                                        </div>
+                                                        <!-- Parte proyectada -->
+                                                        <div class="w-16 h-16 opacity-40 purple-bg rounded-b-lg"></div>
+                                                        <!-- Línea divisoria actual/proyección con marcador -->
+                                                        <div class="absolute top-16 w-16 border-t border-white border-dashed">
+                                                            <div class="absolute -right-20 -top-3 text-xs">
+                                                                <div class="bg-white text-xs px-1 py-0 rounded-sm border border-purple-200">$12,256 (actual)</div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <span class="text-xs mt-1 font-semibold">2025 (Proyección)</span>
+                                                    <span class="text-xs mt-1 font-semibold">2025</span>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Crecimiento porcentual -->
+                                        <div class="mt-6 flex justify-around">
+                                            <div class="text-center">
+                                                <div class="text-sm font-semibold purple-theme">+263%</div>
+                                                <div class="text-xs text-gray-600">vs 2023</div>
+                                            </div>
+                                            <div class="text-center">
+                                                <div class="text-sm font-semibold purple-theme">+108%</div>
+                                                <div class="text-xs text-gray-600">vs 2024</div>
                                             </div>
                                         </div>
                                     </div>
                                     
+                                    <!-- Usuarios por año -->
                                     <div class="bg-gray-50 p-4 rounded-lg">
-                                        <h4 class="font-semibold mb-3 purple-theme"># Usuarios</h4>
+                                        <h4 class="font-semibold mb-8 purple-theme"># Usuarios</h4>
                                         <div class="h-40 relative">
                                             <div class="absolute bottom-0 left-0 w-full h-full flex items-end justify-around px-2">
+                                                <!-- 2023 -->
                                                 <div class="flex flex-col items-center">
                                                     <div class="w-16 rounded-t h-8 purple-bg">
                                                         <div class="absolute -top-6 w-16 text-center text-xs font-bold">48</div>
                                                     </div>
                                                     <span class="text-xs mt-1">2023</span>
                                                 </div>
+                                                
+                                                <!-- 2024 -->
                                                 <div class="flex flex-col items-center">
                                                     <div class="w-16 rounded-t h-24 purple-bg">
                                                         <div class="absolute -top-6 w-16 text-center text-xs font-bold">178</div>
                                                     </div>
                                                     <span class="text-xs mt-1">2024</span>
                                                 </div>
+                                                
+                                                <!-- 2025 - Dividido en actual y proyección -->
                                                 <div class="flex flex-col items-center">
-                                                    <div class="w-16 rounded-t h-32" style="background-color: rgba(85, 1, 241, 0.7);">
-                                                        <div class="absolute -top-6 w-16 text-center text-xs font-bold">240</div>
+                                                    <div class="relative w-16">
+                                                        <!-- Parte actual (YTD) -->
+                                                        <div class="w-16 rounded-t-lg h-12 purple-bg">
+                                                            <div class="absolute -top-9 w-16 text-center text-xs font-bold">310</div>
+                                                        </div>
+                                                        <!-- Parte proyectada -->
+                                                        <div class="w-16 h-20 opacity-40 purple-bg rounded-b-lg"></div>
+                                                        <!-- Marcador actual -->
+                                                        <div class="absolute top-12 w-16 border-t border-white border-dashed">
+                                                            <div class="absolute -right-14 -top-3 text-xs">
+                                                                <div class="bg-white text-xs px-1 py-0 rounded-sm">231 (actual)</div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <span class="text-xs mt-1 font-semibold">2025 (Proyección)</span>
+                                                    <span class="text-xs mt-1 font-semibold">2025</span>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Crecimiento porcentual -->
+                                        <div class="mt-6 flex justify-around">
+                                            <div class="text-center">
+                                                <div class="text-sm font-semibold purple-theme">+271%</div>
+                                                <div class="text-xs text-gray-600">vs 2023</div>
+                                            </div>
+                                            <div class="text-center">
+                                                <div class="text-sm font-semibold purple-theme">+74%</div>
+                                                <div class="text-xs text-gray-600">vs 2024</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="mt-4 bg-gray-50 p-4 rounded-lg border border-gray-200">
-                                    <p class="text-sm text-gray-600 italic">Proyección al final de 2025: siguiendo el mismo % de crecimiento promedio en años pasados.</p>
+                                    <div class="flex flex-col md:flex-row justify-between items-center">
+                                        <p class="text-sm text-gray-600 italic">Proyección basada en la tendencia actual de crecimiento.</p>
+                                        <div class="flex items-center mt-2 md:mt-0">
+                                            <div class="w-3 h-3 purple-bg mr-1"></div>
+                                            <span class="text-xs mr-3">Datos reales</span>
+                                            <div class="w-3 h-3 purple-bg opacity-40 mr-1"></div>
+                                            <span class="text-xs">Proyección</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
 
             <!-- Footer -->
@@ -458,42 +543,57 @@ function renderOnePager(container) {
             </div>
         </div>
     `;
-    
+
     // Inicializar iconos de Lucide
     lucide.createIcons();
-    
+
     // Configurar eventos para las secciones plegables
     setupSectionEvents();
-    
+
     // Actualizar elementos responsivos
     updateResponsiveElements();
 }
 // Configurar eventos para las secciones plegables
 function setupSectionEvents() {
     const sectionHeaders = document.querySelectorAll('.section-header');
-    
+
     sectionHeaders.forEach(header => {
-        header.addEventListener('click', function() {
+        header.addEventListener('click', function () {
             const sectionName = this.getAttribute('data-section');
             const content = document.getElementById(`${sectionName}-content`);
             const chevron = this.querySelector('.chevron');
-            
-            // Cambiar ícono de chevron
+
+            // Cambiar el HTML del ícono directamente en lugar de cambiar el atributo y reinicializarlo
             if (chevron.getAttribute('data-lucide') === 'chevron-up') {
+                // Guarda el ícono actual
+                const oldIcon = chevron.innerHTML;
+                
+                // Cambia el atributo
                 chevron.setAttribute('data-lucide', 'chevron-down');
+                
+                // Clona y reemplaza el nodo para mantener el mismo estilo
+                const newChevron = chevron.cloneNode(true);
+                newChevron.innerHTML = oldIcon;
+                chevron.parentNode.replaceChild(newChevron, chevron);
+                
+                // Inicializa el nuevo ícono
+                lucide.createIcons({
+                    elements: [newChevron]
+                });
             } else {
+                // Similar al caso anterior pero invirtiendo
+                const oldIcon = chevron.innerHTML;
                 chevron.setAttribute('data-lucide', 'chevron-up');
+                
+                const newChevron = chevron.cloneNode(true);
+                newChevron.innerHTML = oldIcon;
+                chevron.parentNode.replaceChild(newChevron, chevron);
+                
+                lucide.createIcons({
+                    elements: [newChevron]
+                });
             }
-            
-            // Actualizar íconos
-            lucide.createIcons({
-                icons: {
-                    ChevronUp: {},
-                    ChevronDown: {}
-                },
-                replaceAll: true
-            });
-            
+
             // Mostrar/ocultar contenido
             content.classList.toggle('hidden');
             sections[sectionName] = !sections[sectionName];
@@ -506,24 +606,24 @@ function updateResponsiveElements() {
     const flowDiagram = document.getElementById('flow-diagram');
     const connector1 = document.getElementById('connector-1');
     const connector2 = document.getElementById('connector-2');
-    
+
     if (flowDiagram) {
         if (isMobile) {
             flowDiagram.classList.remove('flex-row');
             flowDiagram.classList.add('flex-col');
-            
+
             connector1.classList.remove('h-0.5', 'w-8', 'md:w-16');
             connector1.classList.add('w-0.5', 'h-8');
-            
+
             connector2.classList.remove('h-0.5', 'w-8', 'md:w-16');
             connector2.classList.add('w-0.5', 'h-8');
         } else {
             flowDiagram.classList.remove('flex-col');
             flowDiagram.classList.add('flex-row');
-            
+
             connector1.classList.remove('w-0.5', 'h-8');
             connector1.classList.add('h-0.5', 'w-8', 'md:w-16');
-            
+
             connector2.classList.remove('w-0.5', 'h-8');
             connector2.classList.add('h-0.5', 'w-8', 'md:w-16');
         }
