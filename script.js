@@ -469,7 +469,7 @@ function renderOnePager(container) {
                                     
                                     <!-- Usuarios por año -->
                                     <div class="bg-gray-50 p-4 rounded-lg">
-                                        <h4 class="font-semibold mb-8 purple-theme"># Usuarios</h4>
+                                        <h4 class="font-semibold mb-8 purple-theme"># Usuarios Pagados</h4>
                                         <div class="h-40 relative">
                                             <div class="absolute bottom-0 left-0 w-full h-full flex items-end justify-around px-2">
                                                 <!-- 2023 -->
