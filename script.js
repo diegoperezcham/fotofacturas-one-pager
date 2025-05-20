@@ -187,7 +187,7 @@ function renderOnePager(container) {
                                         <div class="circle circle-lg tam-bg">
                                             <span class="text-white font-bold text-2xl">TAM</span>
                                         </div>
-                                        <p class="text-xl font-bold mt-4 purple-theme">18.2B USD</p>
+                                        <p class="text-xl font-bold mt-4 purple-theme">90B USD</p>
                                         <p>Contribuyentes LATAM.</p>
                                     </div>
                                     
@@ -196,7 +196,7 @@ function renderOnePager(container) {
                                         <div class="circle circle-md sam-bg">
                                             <span class="text-white font-bold text-xl">SAM</span>
                                         </div>
-                                        <p class="text-xl font-bold mt-4 purple-theme">7.1B USD</p>
+                                        <p class="text-xl font-bold mt-4 purple-theme">7.2B USD</p>
                                         <p>Contribuyentes México.</p>
                                     </div>
                                     
@@ -205,7 +205,7 @@ function renderOnePager(container) {
                                         <div class="circle circle-sm som-bg">
                                             <span class="text-white font-bold text-lg">SOM</span>
                                         </div>
-                                        <p class="text-xl font-bold mt-4 purple-theme">1.1B USD</p>
+                                        <p class="text-xl font-bold mt-4 purple-theme">360M USD</p>
                                         <p>5% Contribuyentes México.</p>
                                     </div>
                                 </div>
