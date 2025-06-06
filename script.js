@@ -458,7 +458,7 @@ function renderOnePager(container) {
                                                         <!-- Línea divisoria actual/proyección con marcador -->
                                                         <div class="absolute top-16 w-16 border-t border-white border-dashed">
                                                             <div class="absolute -right-20 -top-3 text-xs">
-                                                                <div class="bg-white text-xs px-1 py-0 rounded-sm border border-purple-200">$12,256 (actual)</div>
+                                                                <div class="bg-white text-xs px-1 py-0 rounded-sm border border-purple-200">$14,205 (actual)</div>
                                                             </div>
                                                         </div>
                                                     </div>
