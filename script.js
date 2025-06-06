@@ -143,6 +143,7 @@ function renderOnePager(container) {
                             <div class="flex items-center gap-2 font-semibold text-xl purple-theme">
                                 <i data-lucide="file-text" class="purple-theme"></i>
                                 Situación actual
+                                <span class="text-xs text-gray-500 font-normal ml-2">(Actualizado Mayo 2025)</span>
                             </div>
                             <i data-lucide="chevron-up" class="purple-theme chevron"></i>
                         </div>
@@ -163,6 +164,10 @@ function renderOnePager(container) {
                                 <li class="flex items-baseline gap-2">
                                     <span class="w-2 h-2 rounded-full inline-block mt-2 purple-bg"></span>
                                     <span><strong>Número de colaboradores:</strong> 2 socios, 4 asociados y 4 empleados</span>
+                                </li>
+                                <li class="flex items-baseline gap-2">
+                                    <span class="w-2 h-2 rounded-full inline-block mt-2 purple-bg"></span>
+                                    <span><strong>MRR:</strong> <span class="purple-theme font-bold">$3,154 USD</span></span>
                                 </li>
                             </ul>
                         </div>
@@ -187,8 +192,8 @@ function renderOnePager(container) {
                                         <div class="circle circle-lg tam-bg">
                                             <span class="text-white font-bold text-2xl">TAM</span>
                                         </div>
-                                        <p class="text-xl font-bold mt-4 purple-theme">90B USD</p>
-                                        <p>Contribuyentes LATAM.</p>
+                                        <p class="text-xl font-bold mt-4 purple-theme">21.7B USD</p>
+                                        <p>164.5M contribuyentes LATAM</p>
                                     </div>
                                     
                                     <!-- Círculo SAM -->
@@ -196,8 +201,8 @@ function renderOnePager(container) {
                                         <div class="circle circle-md sam-bg">
                                             <span class="text-white font-bold text-xl">SAM</span>
                                         </div>
-                                        <p class="text-xl font-bold mt-4 purple-theme">7.2B USD</p>
-                                        <p>Contribuyentes México.</p>
+                                        <p class="text-xl font-bold mt-4 purple-theme">11.0B USD</p>
+                                        <p>83.45M contribuyentes México</p>
                                     </div>
                                     
                                     <!-- Círculo SOM -->
@@ -205,13 +210,21 @@ function renderOnePager(container) {
                                         <div class="circle circle-sm som-bg">
                                             <span class="text-white font-bold text-lg">SOM</span>
                                         </div>
-                                        <p class="text-xl font-bold mt-4 purple-theme">360M USD</p>
-                                        <p>5% Contribuyentes México.</p>
+                                        <p class="text-xl font-bold mt-4 purple-theme">550.8M USD</p>
+                                        <p>5% contribuyentes México</p>
                                     </div>
                                 </div>
-                                
-                                <div class="bg-gray-50 p-4 rounded-lg border-l-4 mt-4 text-center italic" style="border-color: #5501F1;">
-                                    "Iniciamos en México con un modelo probado antes de expandirnos a LATAM."
+                                <div class="text-center mb-4">
+                                    <span class="font-semibold">Situación actual:</span> <span class="purple-theme font-bold">$3,154 USD</span>
+                                    <div class="text-xs text-gray-500 mt-1">Actualizado Mayo 2025</div>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg purple-left-border mt-4">
+                                    <p class="text-center italic mb-2">"Iniciamos en México con un modelo probado antes de expandirnos a LATAM."</p>
+                                    <p class="text-sm text-gray-600 mt-2">Fuentes:</p>
+                                    <ul class="text-sm text-gray-600 list-disc list-inside">
+                                        <li><a href="http://omawww.sat.gob.mx/cifras_sat/Documents/ITG_2023_2T.pdf" target="_blank" rel="noopener noreferrer" class="underline text-purple-700 hover:text-purple-900">SAT - Informe Trimestral de Ingresos Gubernamentales 2023</a></li>
+                                        <li><a href="https://www.oecd.org/content/dam/oecd/en/topics/policy-sub-issues/global-tax-revenues/folleto-estadisticas-tributarias-en-america-latina-y-el-caribe.pdf" target="_blank" rel="noopener noreferrer" class="underline text-purple-700 hover:text-purple-900">OCDE - Estadísticas Tributarias en América Latina y el Caribe 2025</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

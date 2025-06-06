@@ -256,3 +256,7 @@ body {
     outline: 2px solid white;
     outline-offset: 2px;
 }
+
+.purple-left-border {
+    border-left: 4px solid var(--primary-color) !important;
+}
